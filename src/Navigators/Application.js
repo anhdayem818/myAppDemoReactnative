@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
+import { SafeAreaView, StatusBar, LogBox } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { StartupContainer } from '@/Containers'
@@ -8,6 +8,7 @@ import MainNavigator from './Main'
 import { navigationRef } from './utils'
 
 const Stack = createStackNavigator()
+LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
 
 // @refresh reset
 const ApplicationNavigator = () => {
